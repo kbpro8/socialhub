@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
 {
+    /**
+     * Display the subscription management page.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\View\View
+     */
     public function index(Request $request)
     {
         $user = $request->user();
@@ -17,6 +23,12 @@ class SubscriptionController extends Controller
         ]);
     }
 
+    /**
+     * Store a new subscription.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $request->validate([

@@ -7,6 +7,12 @@ use OpenAI\Laravel\Facades\OpenAI;
 
 class AiContentController extends Controller
 {
+    /**
+     * Generate social media post content using AI.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function generate(Request $request)
     {
         $request->validate(['topic' => 'required|string|max:100']);

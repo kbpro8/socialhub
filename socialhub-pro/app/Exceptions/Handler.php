@@ -20,6 +20,10 @@ class Handler extends ExceptionHandler
 
     /**
      * Register the exception handling callbacks for the application.
+     *
+     * This is a great place to send exceptions to Sentry, Bugsnag, etc.
+     *
+     * @return void
      */
     public function register(): void
     {

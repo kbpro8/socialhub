@@ -14,10 +14,20 @@ class PublishPost implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    /**
+     * Create a new job instance.
+     *
+     * @param \App\Models\Post $post
+     */
     public function __construct(public Post $post)
     {
     }
 
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
     public function handle(): void
     {
         try {

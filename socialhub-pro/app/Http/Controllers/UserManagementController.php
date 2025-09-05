@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class UserManagementController extends Controller
 {
+    /**
+     * Display a list of users.
+     *
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         $users = User::paginate(10);

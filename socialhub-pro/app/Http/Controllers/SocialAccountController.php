@@ -10,7 +10,12 @@ use Laravel\Socialite\Facades\Socialite;
 class SocialAccountController extends Controller
 {
     /**
-     * Redirect the user to the provider's authentication page.
+     * Redirect the user to the Twitter authentication page.
+     *
+     * This method initiates the OAuth flow by redirecting the user to Twitter
+     * so they can authorize the application.
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse A redirect response to Twitter's auth page.
      */
     public function redirectToProvider()
     {
@@ -18,7 +23,13 @@ class SocialAccountController extends Controller
     }
 
     /**
-     * Obtain the user information from the provider.
+     * Obtain the user information from Twitter after authentication.
+     *
+     * This method is the callback URL that Twitter redirects to after the user
+     * has authenticated. It retrieves the user's details, finds or creates a
+     * corresponding user in the local database, and logs them in.
+     *
+     * @return \Illuminate\Http\RedirectResponse A redirect response to the intended page or home.
      */
     public function handleProviderCallback()
     {

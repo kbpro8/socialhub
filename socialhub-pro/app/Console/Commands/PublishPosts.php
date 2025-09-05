@@ -11,6 +11,11 @@ class PublishPosts extends Command
     protected $signature = 'posts:publish';
     protected $description = 'Publish scheduled posts';
 
+    /**
+     * Execute the console command.
+     *
+     * @return void
+     */
     public function handle()
     {
         $postsToPublish = Post::where('status', 'scheduled')
